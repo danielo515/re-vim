@@ -1,3 +1,5 @@
-(executable (name main)
+(executable 
+ (name main)
+ (public_name Main)
  (libraries core_unix.command_unix core re_vim)
  (preprocess (pps ppx_jane)))
