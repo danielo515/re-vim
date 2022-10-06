@@ -1,5 +1,2 @@
-(library
- (name lib)
- (flags
-  (-w -40 -w +26))
- (public_name hello-reason))
+(library (name re_vim) (libraries async core vcaml)
+ (preprocess (pps ppx_jane)))
