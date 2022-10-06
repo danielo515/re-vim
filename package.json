@@ -6,17 +6,11 @@
   "esy": {
     "buildsInSource": "_build",
     "build": "dune build -p #{self.name}",
-    "buildDev": "dune build --promote-install-files --root . --only-package #{self.name}",
+    "buildDev":
+      "dune build --promote-install-files --root . --only-package #{self.name}",
     "NOTE": "Optional release Section. Customizes result of `esy release`",
-    "release": {
-      "rewritePrefix": true,
-      "bin": [
-        "Hello"
-      ]
-    },
-    "buildEnv": {
-      "ODOC_SYNTAX": "re"
-    }
+    "release": { "rewritePrefix": true, "bin": [ "Hello" ] },
+    "buildEnv": { "ODOC_SYNTAX": "re" }
   },
   "scripts": {
     "test": "esy x Hello",
@@ -26,6 +20,7 @@
   "dependencies": {
     "@opam/dune": "*",
     "@opam/reason": "*",
+    "@opam/vcaml": "v0.15.0",
     "ocaml": "4.14.x"
   },
   "devDependencies": {
