@@ -3,4 +3,4 @@
 let current_dir = expand('<sfile>:p:h')
 
 " Start the plugin.
-call jobstart([current_dir . '/_build/install/default/bin/main.exe'])
+call jobstart([current_dir . '/_build/default/bin/main.exe'])

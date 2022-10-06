@@ -9,11 +9,11 @@
     "buildDev":
       "dune build --promote-install-files --root . --only-package #{self.name}",
     "NOTE": "Optional release Section. Customizes result of `esy release`",
-    "release": { "rewritePrefix": true, "bin": [ "Hello" ] },
+    "release": { "rewritePrefix": true, "bin": [ "main" ] },
     "buildEnv": { "ODOC_SYNTAX": "re" }
   },
   "scripts": {
-    "test": "esy x Hello",
+    "test": "esy x Main",
     "format": "esy dune build @fmt --auto-promote",
     "doc": "esy dune build @doc"
   },
