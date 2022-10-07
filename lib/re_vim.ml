@@ -11,7 +11,7 @@ let echo_hello_world client =
 
 let main =
   Async.Command.async_or_error
-    ~summary:"Print \"Hello, world!\" in the current Neovim instance."
+    ~summary:{|Print "Hello, world!" in the current Neovim instance.|}
     (let%map_open.Async.Command () = return () in
      fun () ->
        let open Deferred.Or_error.Let_syntax in
