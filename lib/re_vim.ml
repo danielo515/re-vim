@@ -9,6 +9,14 @@ let echo_hello_world client =
   Nvim.out_writeln ~str:"Hello, world!" |> run_join [%here] client
 ;;
 
+let bind () = 
+  Vcaml.Keymap.set 
+  ~recursive:false 
+  ~silent:true 
+  ~scope:`Global 
+  ~lhs:"<leader>x" ~rhs:":echo vcaml did it" 
+  ~mode:Vcaml.Keymap.Mode.Normal ()
+
 let main =
   Async.Command.async_or_error
     ~summary:{|Print "Hello, world!" in the current Neovim instance.|}
@@ -21,7 +29,9 @@ let main =
            (Unix `Child)
            ~time_source:(Time_source.wall_clock ())
        in
-       echo_hello_world client)
+       echo_hello_world client
+fun () -> bind ()
+           )
 ;;
 
 module For_testing = struct
