@@ -29,9 +29,7 @@ let main =
            (Unix `Child)
            ~time_source:(Time_source.wall_clock ())
        in
-       echo_hello_world client
-fun () -> bind ()
-           )
+       echo_hello_world client)
 ;;
 
 module For_testing = struct
